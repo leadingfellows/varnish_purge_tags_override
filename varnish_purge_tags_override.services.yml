@@ -1,0 +1,13 @@
+services:
+  varnish_purge_tags_override.helper:
+    class: Drupal\varnish_purge_tags_override\VarnishPurgeTagsOverrideHelper
+    arguments: ['@config.factory', '@path_alias.manager', '@path.matcher', '@request_stack', '@path.current']
+
+  # Set a high priority to ensure the middleware runs, but it should not run before page_cache which has priority 200.
+  varnish_purge_tags_override.http_middleware:
+    class: Drupal\varnish_purge_tags_override\StackMiddleware\VarnishPurgeTagsOverrideMiddleware
+    arguments: [ '@varnish_purge_tags_override.helper' ]
+    tags:
+      - { name: http_middleware, priority: 199, responder: true }
+
+

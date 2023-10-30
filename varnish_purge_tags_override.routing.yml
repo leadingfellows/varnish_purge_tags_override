@@ -1,0 +1,7 @@
+varnish_purge_tags_override.development:
+  path: '/admin/config/development/varnish-purge-tags-override'
+  defaults:
+    _form: '\Drupal\varnish_purge_tags_override\Form\SettingsForm'
+    _title: 'Varnish Purge Tags Override'
+  requirements:
+    _permission: 'administer site configuration'

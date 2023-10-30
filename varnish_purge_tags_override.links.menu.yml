@@ -1,0 +1,8 @@
+
+varnish_purge_tags_override.development:
+  title: 'Varnish Purge Tags Override'
+  route_name: varnish_purge_tags_override.development
+  description: 'Allows to configure Varnish Purge Tags Override.'
+  parent: system.admin_config_development
+
+

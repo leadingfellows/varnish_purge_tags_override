@@ -1,0 +1,11 @@
+# Schema for the configuration files of the varnish_purge_tags_override module.
+varnish_purge_tags_override.settings:
+  type: config_object
+  label: 'Varnish Purge Tags Override settings'
+  mapping:
+    maximum_header_value_size:
+      type: integer
+      label: 'Maximum size in bytes of the Cache-Tags header value'
+    pages:
+      type: string
+      label: 'restrict pages'
